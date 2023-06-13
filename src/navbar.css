@@ -1,0 +1,20 @@
+.logoo{
+    height: 30px;
+}
+
+.me-auto{
+    display: flex;
+    justify-content: center;
+}
+
+
+.container {
+    position: relative;
+  }
+  
+  .centered-element {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
