@@ -1,10 +1,18 @@
-.big-space {
-    margin-top: 800px; 
-  }
+
+
   
   .img-custom{
     float: right;
     height: 428px;
     width: 400px;
+    vertical-align: left ;
   }
   
+  .custom{
+   
+    background-image: url('Capture4.PNG');
+    background-size: cover;
+    height: 19rem;
+   
+  
+  }

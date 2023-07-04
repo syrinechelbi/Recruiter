@@ -1,0 +1,19 @@
+
+
+.img-cus2 {height: 98px;
+width: 241px; 
+}
+.container {
+    position: relative;
+  }
+  
+  .centered-element {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  body {
+    background-color: #9A616D;
+  }

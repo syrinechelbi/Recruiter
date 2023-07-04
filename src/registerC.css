@@ -1,0 +1,15 @@
+body {
+    /* fallback for old browsers */
+    background: #4b4e4f;
+  
+   
+  }
+
+  .custom-card{
+    width: 550px;
+}
+
+.image-custom{
+    height: 300px;
+    width: 400px;
+}
