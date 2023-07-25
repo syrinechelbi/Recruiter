@@ -35,7 +35,7 @@ export default function ApphomeC() {
         src='.\C3.png'
         alt='...'
       >
-       <Link to='/' > <MDBBtn rounded className='mx-2' color='dark'>See your applications</MDBBtn></Link>
+       <Link to='/ApplicationC' > <MDBBtn rounded className='mx-2' color='dark'>See your applications</MDBBtn></Link>
       </MDBCarouselItem>
     
     </MDBCarousel>

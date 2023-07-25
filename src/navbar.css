@@ -1,9 +1,9 @@
 .logoo{
-    height: 30px;
+    height: 70px;
+    width: 80px;
 }
 
 .me-auto{
-    display: flex;
     justify-content: center;
 }
 

@@ -3,9 +3,7 @@
 .img-cus2 {height: 98px;
 width: 241px; 
 }
-.container {
-    position: relative;
-  }
+
   
   .centered-element {
     position: absolute;
@@ -17,3 +15,41 @@ width: 241px;
   body {
     background-color: #9A616D;
   }
+
+  .bouton{
+    width: 119px;
+    background: black;
+   
+    
+}
+.card-img {
+  width: 50%!important;
+  margin-left: 24%;
+}
+
+
+.form-label {
+  margin-bottom: 0.5rem;
+  margin-left: 2%; 
+  display: flex;
+}
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
+  /* display: flex; */
+  margin-left: 38%;
+  margin-top: 2%;
+}
+
+.pb-lg-2 {
+   padding-bottom: 0rem !important;
+}
+.mb-5 {
+    margin-bottom: 0rem !important; 
+}
+
+.class{
+  display: flex;
+  flex-direction: row;
+  margin-top: -6%;
+  margin-left: 2%;
+}

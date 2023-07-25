@@ -32,7 +32,7 @@ function Appnewpwd() {
               <div className='container'>
                 <br />
                 <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
-                <span className="centered-element"><img src='./logo.png' alt="logo" className='img-cus2' /></span>
+                <span className="centered-element"><img src='./sopra.png' alt="logo" className='img-cus2' /></span>
               </div>
 
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Reinitialize password</h5>

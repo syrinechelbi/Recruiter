@@ -18,6 +18,10 @@ import ApphomeC from './homeC';
 import AppCreateProfile from './createprofile';
 import AppSearchJob from './searchjob';
 import AppApplicationC from './applicationsC';
+import AppApplicationE from './ApplicationE';
+import AppCreateoffer from './createoffer';
+import AppCandidates from './candidates';
+import Employerhome from './employer';
 
 function App() {
   return (
@@ -26,7 +30,7 @@ function App() {
 
     <Routes>
         <Route element={<WithoutNav />}>
-        <Route path='/' element={<Applogin />} />
+        <Route path='/login' element={<Applogin />} />
         <Route path='/registerC' element={<AppregisterC />} />
         <Route path='/registerE' element={<AppregisterE />} />
         <Route path='/forget' element={<Appforget />} />
@@ -37,12 +41,16 @@ function App() {
 
       
         <Route element={<WithNav />}>
-        <Route path='/home' exact element={<Apphome />}  />
+        <Route path='/' exact element={<Apphome />}  />
         <Route  path='/homeE' exact element={<ApphomeE />} />
         <Route  path='/homeC' exact element={<ApphomeC />} />
         <Route path='/createProfile' element={<AppCreateProfile />} />
         <Route path='/SearchJob' element={<AppSearchJob />} />
-        <Route path='/AplicationC' element={<AppApplicationC />} />
+        <Route path='/ApplicationC' element={<AppApplicationC />} />
+        <Route path='/ApplicationE' element={<AppApplicationE />} />
+        <Route path='/createoffer' element={<AppCreateoffer />} />
+        <Route path='/candidates' element={<AppCandidates />} />
+        <Route path='/employerhome' element={<Employerhome />} />
         </Route>
       </Routes>
 

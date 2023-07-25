@@ -2,12 +2,17 @@ import React from "react";
 import './homee.png';
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 
-import './home.css'
+import './home.css';
+
 export default function Apphome() {
 
 return(
 <div class="big-space">
-<MDBContainer fluid > 
+<MDBContainer fluid  > 
+<br />
+<br />
+<br />
+
   <MDBRow class="custom-container">
     <MDBCol className="text-start">
     <h1>Connecting talent to opportunity</h1>
@@ -20,10 +25,12 @@ return(
   </MDBRow>
  
 </MDBContainer>
-  <br></br>
-  <br></br>
-  <br></br>
-  <br></br>
+  <br />
+  <br />
+  <br />
+  <br />
+  
+
 </div>
 )
 
