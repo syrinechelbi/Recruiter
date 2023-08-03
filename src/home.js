@@ -6,14 +6,14 @@ import { Card, Container } from "react-bootstrap";
 export default function Apphome() {
   return (
     <div class="big-space">
-      <Container style={{ height: "700px", padding: "5%" }}>
+      <Container style={{ height: "650px", padding: "5%" }}>
         <h1>Connecting talent to opportunity</h1>
         <h3>
           Discover the perfect match for your career <br></br>or find the ideal
           candidate for your organization.
         </h3>
         <div className="cardContainer">
-          <Card style={{ width: "30rem", height: "12rem" }}>
+          <Card style={{ width: "30rem", height: "12rem", marginTop: "3%" }}>
             <Card.Body>
               <Card.Title>Employer</Card.Title>
               <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
@@ -26,7 +26,7 @@ export default function Apphome() {
               <Card.Link href="#">Follow applications</Card.Link>
             </Card.Body>
           </Card>
-          <Card style={{ width: "30rem" }}>
+          <Card style={{ width: "30rem", marginTop: "3%" }}>
             <Card.Body>
               <Card.Title>Candidate</Card.Title>
 
