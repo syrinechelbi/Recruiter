@@ -103,13 +103,14 @@ function AppregisterC() {
             </div>
             <Form.Label>email</Form.Label>
             <Form.Control
+              name="email"
               type="email"
-              placeholder="Email"
               value={data.email}
               onChange={handleChange}
             />
             <Form.Label htmlFor="inputPassword5">Password</Form.Label>
             <Form.Control
+              name="password"
               type="password"
               id="inputPassword5"
               aria-describedby="passwordHelpBlock"
