@@ -25,7 +25,7 @@ function Appnavbar() {
           </Nav>
         </Container>
         <AiOutlineUser size={40} /> 
-        <Button variant="dark" href="/" > Login </Button>
+        <Button variant="dark" href="/login" > Login </Button>
        <p>   </p>
       </Navbar>
     </>
