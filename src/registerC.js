@@ -45,7 +45,7 @@ function AppregisterC() {
   };
 
   return (
-    <Container style={{ width: "30rem", height: "25rem" }}>
+    <Container style={{ width: "30rem", height: "25rem", marginTop: "4%" }}>
       <Card style={{ width: "30rem" }}>
         <Card.Img variant="center" src="./sopra.png" className="card-img" />
         <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: "1px" }}>
@@ -109,7 +109,12 @@ function AppregisterC() {
               onChange={handleChange}
             />
             {error && <div className={StyleSheet.error_msg}>{error}</div>}
-            <Button variant="dark" className="bouton" type="submit">
+            <Button
+              variant="dark"
+              className="bouton"
+              type="submit"
+              style={{ marginLeft: "2%" }}
+            >
               Register
             </Button>
           </form>
