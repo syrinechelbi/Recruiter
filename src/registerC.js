@@ -12,7 +12,7 @@ function AppregisterC() {
     phone: "",
     email: "",
     password: "",
-    gender: "",
+    gender: ""
   });
 
   const handleChange = ({ currentTarget: Input }) => {
@@ -38,7 +38,7 @@ function AppregisterC() {
       }
     }
   };
-  const [selectedOption, setSelectedOption] = useState("option1");
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleRadioChange = (event) => {
     setSelectedOption(event.target.value);
@@ -118,7 +118,6 @@ function AppregisterC() {
           </Card.Body>
           <br />
           <br />
-
           <br />
           <br />
         </Card>

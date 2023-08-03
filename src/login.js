@@ -28,7 +28,7 @@ function Applogin() {
           style={{ marginLeft: "38%" }}
           variant="dark"
           className="bouton"
-          href="/home"
+          href="/"
         >
           Sign In
         </Button>
@@ -44,12 +44,10 @@ function Applogin() {
         </p>
         <div className="class">
           <Button variant="dark" href="/registerC">
-            {" "}
-            Register as a candidate{" "}
+            Register as a candidate
           </Button>
           <Button variant="dark" href="/registerE">
-            {" "}
-            Register as an employer{" "}
+            Register as an employer
           </Button>
         </div>
       </Card>

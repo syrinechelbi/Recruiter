@@ -40,7 +40,7 @@ function Appnewpwd() {
               <MDBInput wrapperClass='mb-4' label='New Password' id='formControlLg' type='password' size="lg" placeholder='New Password'/>
                 <MDBInput wrapperClass='mb-4' label=' Confirm Password' id='formControlLg' type='password' size="lg" placeholder='Confirm Password'/>
 
-              <Link to='/home' ><MDBBtn className="mb-4 px-5" color='dark' size='lg'>Submit</MDBBtn> </Link>
+              <Link to='/' ><MDBBtn className="mb-4 px-5" color='dark' size='lg'>Submit</MDBBtn> </Link>
              
               
 
