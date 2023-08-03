@@ -41,7 +41,7 @@ function AppregisterC() {
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleRadioChange = (event) => {
-    setSelectedOption(event.target.value);
+    setSelectedOption(event.target.value);}
 
     return (
       <Container style={{ width: "30rem", height: "25rem" }}>
@@ -124,6 +124,6 @@ function AppregisterC() {
       </Container>
     );
   };
-}
+
 
 export default AppregisterC;
