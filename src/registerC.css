@@ -17,5 +17,9 @@ body {
   width: 119px;
   background: black;
  
-  
+}
+.checkBoxContainer{
+  display: flex;
+    width: 50%;
+    justify-content: space-between;
 }

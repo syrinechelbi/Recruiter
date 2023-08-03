@@ -77,22 +77,30 @@ function AppregisterC() {
               onChange={handleChange}
             />
             <Form.Label>Gender</Form.Label>
-            <Form.Check
-              value="female"
-              type="radio"
-              aria-label="radio 1"
-              label="female"
-              checked={selectedOption === "female"}
-              onChange={handleRadioChange}
-            />
-            <Form.Check
-              value="male"
-              type="radio"
-              aria-label="radio 2"
-              label="male"
-              checked={selectedOption === "male"}
-              onChange={handleRadioChange}
-            />
+            <div
+              style={{
+                display: "flex",
+                width: "50%",
+                justifyContent: "space-between",
+              }}
+            >
+              <Form.Check
+                value="female"
+                type="radio"
+                aria-label="radio 1"
+                label="female"
+                checked={selectedOption === "female"}
+                onChange={handleRadioChange}
+              />
+              <Form.Check
+                value="male"
+                type="radio"
+                aria-label="radio 2"
+                label="male"
+                checked={selectedOption === "male"}
+                onChange={handleRadioChange}
+              />
+            </div>
             <Form.Label>email</Form.Label>
             <Form.Control
               type="email"
@@ -113,7 +121,7 @@ function AppregisterC() {
               variant="dark"
               className="bouton"
               type="submit"
-              style={{ marginLeft: "2%" }}
+              style={{ marginLeft: "2%", marginTop: "5%" }}
             >
               Register
             </Button>
