@@ -13,3 +13,13 @@ body {
     height: 300px;
     width: 400px;
 }
+.bouton{
+  width: 119px;
+  background: black;
+ 
+}
+.checkBoxContainer{
+  display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
