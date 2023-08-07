@@ -1,96 +1,43 @@
-import React from 'react';
-import {MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function AppCandidates() {
+  const [data,setData]=useState([]);
+  useEffect(() => {
+  axios
+  .get("http://localhost:5000/candidates/all")
+  .then(res => {
+    console.log({res})
+    setData(res.data)
+  }
+    )
+    .catch(err => {
+      console.log(err);
+    })  
+  },[]);
+
   return (
-    <MDBTable align='middle'>
-      <MDBTableHead>
-        <tr>
-          <th scope='col'>Candidate Name</th>
-          <th scope='col'>Domain</th>
-          <th scope='col'>see profile</th>
-        </tr>
-      </MDBTableHead>
-      <MDBTableBody>
-        <tr>
-          <td>
-            <div className='d-flex align-items-center'>
-              <img
-                src='https://mdbootstrap.com/img/new/avatars/8.jpg'
-                alt=''
-                style={{ width: '45px', height: '45px' }}
-                className='rounded-circle'
-              />
-              <div className='ms-3'>
-                <p className='fw-bold mb-1'>John Doe</p>
-                <p className='text-muted mb-0'>john.doe@gmail.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p className='fw-normal mb-1'>Software engineer</p>
-            <p className='text-muted mb-0'>IT department</p>
-          </td>
-         
-          <td>
-            <MDBBtn color='link' rounded size='sm'>
-              See profile
-            </MDBBtn>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className='d-flex align-items-center'>
-              <img
-                src='https://mdbootstrap.com/img/new/avatars/6.jpg'
-                alt=''
-                style={{ width: '45px', height: '45px' }}
-                className='rounded-circle'
-              />
-              <div className='ms-3'>
-                <p className='fw-bold mb-1'>Alex Ray</p>
-                <p className='text-muted mb-0'>alex.ray@gmail.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p className='fw-normal mb-1'>Consultant</p>
-            <p className='text-muted mb-0'>Finance</p>
-          </td>
-        
-          <td>
-            <MDBBtn color='link' rounded size='sm'>
-              See profile
-            </MDBBtn>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div className='d-flex align-items-center'>
-              <img
-                src='https://mdbootstrap.com/img/new/avatars/7.jpg'
-                alt=''
-                style={{ width: '45px', height: '45px' }}
-                className='rounded-circle'
-              />
-              <div className='ms-3'>
-                <p className='fw-bold mb-1'>Kate Hunington</p>
-                <p className='text-muted mb-0'>kate.hunington@gmail.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p className='fw-normal mb-1'>Designer</p>
-            <p className='text-muted mb-0'>UI/UX</p>
-          </td>
-         
-          <td>
-            <MDBBtn color='link' rounded size='sm'>
-              See profile
-            </MDBBtn>
-          </td>
-        </tr>
-      </MDBTableBody>
-    </MDBTable>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Speciality</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+  {data.map( data =>(    <tr>
+      <td><b>{data.firstName} {data.lastName} </b> <br/> {data.email}</td>
+      <td>Software Engineer</td>
+      <td><a href="#">See profile</a></td>
+
+
+    </tr>))}
+
+    
+  </tbody>
+</table>
+
   );
 }

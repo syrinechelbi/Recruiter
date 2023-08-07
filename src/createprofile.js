@@ -125,7 +125,7 @@ function AppCreateProfile() {
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form5' type='rel'
+                <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form5' type='text'
                 value={data.phone} name='phone' onChange={handleChange} required/>
               </MDBCol>
 
@@ -133,12 +133,12 @@ function AppCreateProfile() {
              <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Country' size='lg' id='form4' type='email'
+                <MDBInput wrapperClass='mb-4' label='Country' size='lg' id='form4' type='text'
                 value={data.country} name='country' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Town' size='lg' id='form5' type='rel'
+                <MDBInput wrapperClass='mb-4' label='Town' size='lg' id='form5' type='text'
                 value={data.town} name='town' onChange={handleChange} required/>
               </MDBCol>
 
@@ -148,12 +148,12 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Highest level of education attained' size='lg' id='form4' type='email'
+                <MDBInput wrapperClass='mb-4' label='Highest level of education attained' size='lg' id='form4' type='text'
                 value={data.highLevel} name='highLevel' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Name of the educational institution' size='lg' id='form5' type='rel'
+                <MDBInput wrapperClass='mb-4' label='Name of the educational institution' size='lg' id='form5' type='text'
                 value={data.educInstitut} name='educInstitut' onChange={handleChange} required/>
               </MDBCol>
 
@@ -161,12 +161,12 @@ function AppCreateProfile() {
              <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Major/Field of study' size='lg' id='form4' type='email'
+                <MDBInput wrapperClass='mb-4' label='Major/Field of study' size='lg' id='form4' type='text'
                 value={data.fieldStudy} name='fieldStudy' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Year of graduation' size='lg' id='form5' type='rel'
+                <MDBInput wrapperClass='mb-4' label='Year of graduation' size='lg' id='form5' type='text'
                 value={data.yearGrad} name='yearGrad' onChange={handleChange} required/>
               </MDBCol>
 
@@ -177,12 +177,12 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Company Name' size='lg' id='form4' type='email'
+                <MDBInput wrapperClass='mb-4' label='Company Name' size='lg' id='form4' type='text'
                 value={data.CopmanyP} name='CopmanyP' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Job title' size='lg' id='form5' type='rel'
+                <MDBInput wrapperClass='mb-4' label='Job title' size='lg' id='form5' type='text'
                 value={data.jobTitleP} name='jobTitleP' onChange={handleChange} required/>
               </MDBCol>
 
@@ -190,7 +190,7 @@ function AppCreateProfile() {
              <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Employment period (start and end dates)' size='lg' id='form4' type='email'
+                <MDBInput wrapperClass='mb-4' label='Employment period (start and end dates)' size='lg' id='form4' type='text'
                 value={data.empPeriod} name='empPeriod' onChange={handleChange} required/>
               </MDBCol>
 
