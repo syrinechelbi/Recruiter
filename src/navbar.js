@@ -19,7 +19,7 @@ function Appnavbar() {
         <img src='./sopra.png' alt="Logo"  className='logoo'/>
         </Navbar.Brand>
           <Nav className="centered-element">
-            <Nav.Link href="/home">Home   </Nav.Link>
+            <Nav.Link href="/">Home   </Nav.Link>
             <Nav.Link href="/employerhome">Employer  </Nav.Link>
             <Nav.Link href="/homeC">Candidate  </Nav.Link>
           </Nav>

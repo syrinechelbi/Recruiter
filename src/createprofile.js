@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -13,13 +13,72 @@ import {
   MDBFile
 }
 from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 function AppCreateProfile() {
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    gender: "",
+    dateOfBirth : "",
+    country : "",
+    town : "",
+    highLevel : "",
+    educInstitut : "",
+    fieldStudy : "",
+    yearGrad : "",
+    CopmanyP : "",
+    jobTitleP : "",
+    empPeriod : "",
+    jobResp : "",
+    techSkills : "",
+    softSkills : "",
+    Language : "",
+    addInfor : ""
+
+  });
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleRadioChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const handleChange = ({ currentTarget: Input }) => {
+    setData({ ...data, [Input.name]: Input.value });
+  };
+
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:5000/profile/create";
+      console.log(url);
+      const { data: res } = await axios.post(url, data);
+      navigate("/");
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+  };
+
+
   return (
     <MDBContainer fluid>
 
       <MDBRow className='justify-content-center align-items-center m-5'>
-
+<form onSubmit={handleSubmit}>
         <MDBCard>
           <MDBCardBody className='px-4'>
 
@@ -30,11 +89,13 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='First Name' size='lg' id='form1' type='text'/>
+                <MDBInput wrapperClass='mb-4' label='First Name' size='lg' id='form1' type='text' 
+                value={data.firstName} name='firstName' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Last Name' size='lg' id='form2' type='text'/>
+                <MDBInput wrapperClass='mb-4' label='Last Name' size='lg' id='form2' type='text'
+                value={data.lastName} name='lastName' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
@@ -42,13 +103,16 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Date of birth' size='lg' id='form3' type='text'/>
+                <MDBInput wrapperClass='mb-4' label='Date of birth' size='lg' id='form3' type='text'
+                value={data.dateOfBirth} name='dateOfBirth' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6' className='mb-4'>
                 <h6 className="fw-bold">Gender: </h6>
-                <MDBRadio name='inlineRadio' id='inlineRadio1' value='option1' label='Female' inline />
-                <MDBRadio name='inlineRadio' id='inlineRadio2' value='option2' label='Male' inline />
+                <MDBRadio name='inlineRadio' id='inlineRadio1' value='f' label='Female' inline checked={selectedOption === "female"}
+                onChange={handleRadioChange}/>
+                <MDBRadio name='inlineRadio' id='inlineRadio2' value='m' label='Male' inlinechecked={selectedOption === "female"}
+                onChange={handleRadioChange} />
               </MDBCol>
 
             </MDBRow>
@@ -56,22 +120,26 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Email' size='lg' id='form4' type='email'/>
+                <MDBInput wrapperClass='mb-4' label='Email' size='lg' id='form4' type='email'
+                value={data.email} name='email' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form5' type='rel'/>
+                <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form5' type='rel'
+                value={data.phone} name='phone' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
              <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Country' size='lg' id='form4' type='email'/>
+                <MDBInput wrapperClass='mb-4' label='Country' size='lg' id='form4' type='email'
+                value={data.country} name='country' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Town' size='lg' id='form5' type='rel'/>
+                <MDBInput wrapperClass='mb-4' label='Town' size='lg' id='form5' type='rel'
+                value={data.town} name='town' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
@@ -80,22 +148,26 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Highest level of education attained' size='lg' id='form4' type='email'/>
+                <MDBInput wrapperClass='mb-4' label='Highest level of education attained' size='lg' id='form4' type='email'
+                value={data.highLevel} name='highLevel' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Name of the educational institution' size='lg' id='form5' type='rel'/>
+                <MDBInput wrapperClass='mb-4' label='Name of the educational institution' size='lg' id='form5' type='rel'
+                value={data.educInstitut} name='educInstitut' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
              <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Major/Field of study' size='lg' id='form4' type='email'/>
+                <MDBInput wrapperClass='mb-4' label='Major/Field of study' size='lg' id='form4' type='email'
+                value={data.fieldStudy} name='fieldStudy' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Year of graduation' size='lg' id='form5' type='rel'/>
+                <MDBInput wrapperClass='mb-4' label='Year of graduation' size='lg' id='form5' type='rel'
+                value={data.yearGrad} name='yearGrad' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
@@ -105,22 +177,26 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Company Name' size='lg' id='form4' type='email'/>
+                <MDBInput wrapperClass='mb-4' label='Company Name' size='lg' id='form4' type='email'
+                value={data.CopmanyP} name='CopmanyP' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Job title' size='lg' id='form5' type='rel'/>
+                <MDBInput wrapperClass='mb-4' label='Job title' size='lg' id='form5' type='rel'
+                value={data.jobTitleP} name='jobTitleP' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
              <MDBRow>
 
               <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Employment period (start and end dates)' size='lg' id='form4' type='email'/>
+                <MDBInput wrapperClass='mb-4' label='Employment period (start and end dates)' size='lg' id='form4' type='email'
+                value={data.empPeriod} name='empPeriod' onChange={handleChange} required/>
               </MDBCol>
 
               <MDBCol md='6'>
-                <MDBTextArea label='Job responsabilities' id='textAreaExample' rows={3} />
+                <MDBTextArea label='Job responsabilities' id='textAreaExample' rows={3} 
+                value={data.jobResp} name='jobResp' onChange={handleChange} required/>
               </MDBCol>
 
             </MDBRow>
@@ -130,11 +206,13 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-              <MDBTextArea label='Technical skills' id='textAreaExample' rows={3} />
+              <MDBTextArea label='Technical skills' id='textAreaExample' rows={3}
+                value={data.techSkills} name='techSkills' onChange={handleChange} required />
               </MDBCol>
 
               <MDBCol md='6'>
-              <MDBTextArea label='Soft Skills' id='textAreaExample' rows={3} />
+              <MDBTextArea label='Soft Skills' id='textAreaExample' rows={3} 
+                value={data.softSkills} name='softSkills' onChange={handleChange} required/>
               </MDBCol>
               
 
@@ -142,11 +220,13 @@ function AppCreateProfile() {
             <MDBRow>
 
               <MDBCol md='6'>
-              <MDBTextArea label='Language Proficiency' id='textAreaExample' rows={3} />
+              <MDBTextArea label='Language Proficiency' id='textAreaExample' rows={3}
+                value={data.Language} name='Language' onChange={handleChange} required />
               </MDBCol>
 
               <MDBCol md='6'>
-              <MDBTextArea label='Additionnal informations' id='textAreaExample' rows={3} />
+              <MDBTextArea label='Additionnal informations' id='textAreaExample' rows={3}
+                value={data.addInfo} name='addInfo' onChange={handleChange} required />
               </MDBCol>
               
             
@@ -172,11 +252,18 @@ function AppCreateProfile() {
 
             <br />
             <br />
-            <MDBBtn className='mb-4' size='lg'>Submit</MDBBtn>
+            <Button
+          style={{ marginLeft: "-1%" }}
+          variant="dark"
+          className="bouton"
+          type="submit"
+        >
+         Submit
+        </Button>
 
           </MDBCardBody>
         </MDBCard>
-
+        </form>
       </MDBRow>
     </MDBContainer>
   );

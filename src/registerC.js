@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function AppregisterC() {
@@ -18,14 +18,15 @@ function AppregisterC() {
   };
 
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:5000/candidate/signup";
+      const url = "http://localhost:5000/candidates/signup";
       console.log(url);
       const { data: res } = await axios.post(url, data);
-      Navigate("/login");
+      navigate("/login");
       console.log(res.message);
     } catch (error) {
       if (

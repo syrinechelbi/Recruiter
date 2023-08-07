@@ -21,9 +21,9 @@ export default function Apphome() {
                 As employer you can post offers, find candidates and follow
                 applications.
               </Card.Text>
-              <Card.Link href="#">Post offers</Card.Link>
-              <Card.Link href="#">Find candidates</Card.Link>
-              <Card.Link href="#">Follow applications</Card.Link>
+              <Card.Link href="/createoffer">Post offers</Card.Link>
+              <Card.Link href="/candidates">Find candidates</Card.Link>
+              <Card.Link href="/ApplicationE">Follow applications</Card.Link>
             </Card.Body>
           </Card>
           <Card style={{ width: "30rem", marginTop: "3%" }}>
@@ -34,9 +34,9 @@ export default function Apphome() {
                 As candidate you can create your profile, find a job and follow
                 your application.
               </Card.Text>
-              <Card.Link href="#">Create profile</Card.Link>
-              <Card.Link href="#">Find job</Card.Link>
-              <Card.Link href="#">Follow your application</Card.Link>
+              <Card.Link href="/createProfile">Create profile</Card.Link>
+              <Card.Link href="/SearchJob">Find job</Card.Link>
+              <Card.Link href="/ApplicationC">Follow your application</Card.Link>
             </Card.Body>
           </Card>
         </div>

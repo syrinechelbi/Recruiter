@@ -1,43 +1,42 @@
-import React from "react";
-import {
-  MDBCarousel,
-  MDBCarouselItem,
-} from 'mdb-react-ui-kit';
-import './homeE.css';
-import { Link } from "react-router-dom";
-import {MDBBtn} from "mdb-react-ui-kit";
+import { Button } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 
-export default function ApphomeC() {
+function ApphomeC() {
   return (
-    <MDBCarousel showIndicators showControls fade>
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={1}
-        src='.\C2.png'
-        alt='...'
-      >
-<Link to='/createProfile' > <MDBBtn rounded className='mx-2' color='dark'>Create your profile</MDBBtn></Link>
-      </MDBCarouselItem>
-     
+    <Carousel data-bs-theme="dark">
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          alt="First slide"
+          src='.\C2.png'
+        />
+        <Carousel.Caption>
+        <Button variant="dark" href='/createProfile'>Create your profile</Button>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          alt="First slide"
+          src='.\C1.png'
+        />
+        <Carousel.Caption>
+        <Button variant="dark" href='/SearchJob'>See job offers</Button>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          alt="....."
+          src='.\C3.png'
+        />
+        <Carousel.Caption>
+        <Button variant="dark" href='/ApplicationC'>See your applications</Button>
+        </Carousel.Caption>
+      </Carousel.Item>
 
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={2}
-        src='.\C1.png'
-        alt='...'
-      >
-         <Link to='/SearchJob' > <MDBBtn rounded className='mx-2' color='dark'>See job offers</MDBBtn></Link>
-      </MDBCarouselItem>
-
-      <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={3}
-        src='.\C3.png'
-        alt='...'
-      >
-       <Link to='/ApplicationC' > <MDBBtn rounded className='mx-2' color='dark'>See your applications</MDBBtn></Link>
-      </MDBCarouselItem>
-    
-    </MDBCarousel>
+    </Carousel>
   );
 }
+
+export default ApphomeC;

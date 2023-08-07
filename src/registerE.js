@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 import './login.css'; 
-import { Link, Navigate } from 'react-router-dom';
+import {  Navigate, useNavigate } from 'react-router-dom';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 import axios from 'axios';
 
 
 function AppregisterE() {
+
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -18,19 +19,22 @@ function AppregisterE() {
   });
 
   const handleChange = ({ currentTarget: Input }) => {
-    setData({ data, [Input.name]: Input.value });
+    setData((prevData) => ({
+      ...prevData,
+      [Input.name]: Input.value,
+    }));
   };
-  const [error, setError] = useState("");
+  const [error,setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const url = "http://localhost:5000/employer/signup";
-      console.log(url);
       const { data: res } = await axios.post(url, data);
-      Navigate("/login");
-      console.log(res.message);
-    } catch (error) {
+      navigate ("/login") ;
+    }
+      catch (error) {
       if (
         error.response &&
         error.response.status >= 400 &&
@@ -104,16 +108,18 @@ function AppregisterE() {
         required
         onChange={handleChange}   
       />
-</form>
-</Card.Body>
-<br />
+      <br />
 <br />
 
-         <Link to='/login' className='class'><Button variant="dark" className='bouton'>Register</Button></Link> 
          
 
          <br />
-<br />       
+<br />   
+               <Button type="submit" variant="dark" className='bouton'>Register</Button>
+
+</form>
+</Card.Body>
+    
 
          
 </Card>
