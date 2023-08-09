@@ -1,8 +1,16 @@
 
 
-.img-cus2 {height: 98px;
+.img-cus2 {height: 150px;
 width: 241px; 
+margin-left: 50%;
 }
+
+.img-cus1 {height: 150px;
+  width: 241px; 
+  margin-left: 20%;
+  margin-top: 25%;
+  margin-bottom: 15%;
+  }
 
   
   .centered-element {

@@ -15,7 +15,7 @@ import {
 from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 function AppCreateProfile() {
   const [data, setData] = useState({
@@ -111,7 +111,7 @@ function AppCreateProfile() {
                 <h6 className="fw-bold">Gender: </h6>
                 <MDBRadio name='inlineRadio' id='inlineRadio1' value='f' label='Female' inline checked={selectedOption === "female"}
                 onChange={handleRadioChange}/>
-                <MDBRadio name='inlineRadio' id='inlineRadio2' value='m' label='Male' inlinechecked={selectedOption === "female"}
+                <MDBRadio name='inlineRadio' id='inlineRadio2' value='m' label='Male' inline checked={selectedOption === "female"}
                 onChange={handleRadioChange} />
               </MDBCol>
 
@@ -243,10 +243,13 @@ function AppCreateProfile() {
             </MDBCol>
 
             <MDBCol md='9' className='pe-5'>
-              <MDBFile size='lg' id='customFile' />
-              <div className="small text-muted mt-2">Upload your CV/Resume or any other relevant file. Max file size 50 MB</div>
-            </MDBCol>
-
+            <Form.Group controlId="formFileMultiple" className="mb-3">
+        <Form.Label>Upload your CV/Resume or any other relevant file. Max file size 50 MB</Form.Label>
+        <Form.Control type="file" data-browse="Choose file" multiple />
+      </Form.Group>
+      
+              </MDBCol>
+           
             </MDBRow>
 
 

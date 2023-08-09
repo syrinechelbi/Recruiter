@@ -14,6 +14,7 @@ from 'mdb-react-ui-kit';
 import './login.css'; 
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import { Button } from 'react-bootstrap';
 
 function Appnewpwd() {
   return (
@@ -32,7 +33,7 @@ function Appnewpwd() {
               <div className='container'>
                 <br />
                 <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
-                <span className="centered-element"><img src='./sopra.png' alt="logo" className='img-cus2' /></span>
+                <span className="centered-element"><img src='./sopra.png' alt="logo" className='img-cus1' /></span>
               </div>
 
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Reinitialize password</h5>
@@ -40,7 +41,15 @@ function Appnewpwd() {
               <MDBInput wrapperClass='mb-4' label='New Password' id='formControlLg' type='password' size="lg" placeholder='New Password'/>
                 <MDBInput wrapperClass='mb-4' label=' Confirm Password' id='formControlLg' type='password' size="lg" placeholder='Confirm Password'/>
 
-              <Link to='/' ><MDBBtn className="mb-4 px-5" color='dark' size='lg'>Submit</MDBBtn> </Link>
+              <Link to='/' >
+        <Button
+          style={{ marginLeft: "-1%" }}
+          variant="dark"
+          className="bouton"
+          type="submit"
+        >
+       Submit
+        </Button> </Link>
              
               
 

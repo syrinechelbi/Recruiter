@@ -40,10 +40,10 @@ function Applogin() {
     }
       catch (error) {
         if (error.response && error.response.status === 401) {
-          setErrorMsg('Mot de passe incorrect');
+          setErrorMsg('incorrect password');
     }
     else {
-      setErrorMsg('Une erreur s\'est produite lors de la connexion');
+      setErrorMsg('"An error occurred during the connection');
     }
   }
 };

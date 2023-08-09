@@ -1,0 +1,14 @@
+.row > * {
+    width: 80%;
+ 
+}
+.row {
+    margin-left: calc(7 * var(--bs-gutter-x));
+}
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+    cursor: pointer;
+  margin-left: 0%; 
+  width: 14%;
+  height: 6%;
+
+}

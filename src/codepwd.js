@@ -13,6 +13,7 @@ import {
 from 'mdb-react-ui-kit';
 import './login.css'; 
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
 function Appcodepwd() {
@@ -36,10 +37,18 @@ function Appcodepwd() {
 
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Please enter the code recieved via mail </h5>
 
-                <MDBInput wrapperClass='mb-4' label='code de récupération' id='formControlLg' type='email' size="lg" placeholder='code'/>
+                <MDBInput wrapperClass='mb-4' label='verification code' id='formControlLg' type='email' size="lg" placeholder='code'/>
               
 
-              <Link to='/newpwd' ><MDBBtn className="mb-4 px-5" color='dark' size='lg'>Submit</MDBBtn> </Link>
+              <Link to='/newpwd' >
+        <Button
+          style={{ marginLeft: "-1%" }}
+          variant="dark"
+          className="bouton"
+          type="submit"
+        >
+         Submit
+        </Button> </Link>
              
 
             </MDBCardBody>

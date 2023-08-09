@@ -12,6 +12,7 @@ import {
   MDBTextArea
 }
 from 'mdb-react-ui-kit';
+import "./createOffer.css"
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
